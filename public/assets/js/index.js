@@ -1,9 +1,13 @@
+
+
 let noteForm;
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+
+let noteCounter = 1;
 
 if (window.location.pathname === '/notes') {
   noteForm = document.querySelector('.note-form');
@@ -44,6 +48,15 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note)
   });
+  /*.then((res) => res.json())
+  .then((data) => {
+    console.log('Successful POST request:', data);
+    return data;
+  })
+  .catch((error) => {
+    console.error('Error in POST request:', error);
+  });
+*/
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -74,6 +87,7 @@ const renderActiveNote = () => {
 
 const handleNoteSave = () => {
   const newNote = {
+    id: "note-" + noteCounter,
     title: noteTitle.value,
     text: noteText.value
   };
@@ -81,6 +95,8 @@ const handleNoteSave = () => {
     getAndRenderNotes();
     renderActiveNote();
   });
+
+  noteCounter++;
 };
 
 // Delete the clicked note
@@ -129,10 +145,16 @@ const handleRenderBtns = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+
+  
   let jsonNotes = await notes.json();
+  noteCounter = jsonNotes.length;
+  console.log(typeof jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
+
+  
 
   let noteListItems = [];
 
