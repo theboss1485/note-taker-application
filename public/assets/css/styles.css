@@ -30,8 +30,10 @@ body {
   padding-top: 15px;
 }
 
+/*I increased the height of the note title because some of the character 'g' was getting cut off 
+by the previous 50px height.  It looked like the same thing was happening with the character 'q'.*/
 .note-title {
-  height: 50px;
+  height: 70px;
   margin-top: 13px;
   font-size: 3rem;
 }
@@ -70,9 +72,11 @@ body {
   cursor: pointer;
 }
 
+/*I also increased the padding around the notes because I wanted each note to be the same height as
+the note title, as it was before I increased the height of the note title.*/
 .list-container .list-group-item {
   border-left: none;
   border-right: none;
-  padding: 20px;
+  padding: 30px;
   cursor: pointer;
 }

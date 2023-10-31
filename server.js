@@ -33,6 +33,7 @@ app.post('/api/notes', (req, res) => {
     console.log(typeof req.body);
 
     let postedData = req.body;
+    let currentDataArray = null;
 
     // we want to READ the info (DATA) in where we need it 
     fs.readFile('./db/notes.json', 'utf8', function(error, data){
@@ -48,14 +49,14 @@ app.post('/api/notes', (req, res) => {
 
         } else {
             
-            let currentDataObject = JSON.parse(data);
-            currentDataArray = currentDataObject;
+            currentDataArray = JSON.parse(data);
         }
         
-        
         console.log(currentDataArray);
+        postedData.id = "note-" + (currentDataArray.length + 1);
 
         currentDataArray.push(postedData);
+        
         console.log(currentDataArray);
 
         // We MODIFTY (UPDATE) our original data(set)

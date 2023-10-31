@@ -7,7 +7,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-let noteCounter = 1;
+//let noteCounter = 1;
 
 if (window.location.pathname === '/notes') {
   noteForm = document.querySelector('.note-form');
@@ -87,7 +87,7 @@ const renderActiveNote = () => {
 
 const handleNoteSave = () => {
   const newNote = {
-    id: "note-" + noteCounter,
+    //id: "note-" + (noteCounter + 1),
     title: noteTitle.value,
     text: noteText.value
   };
@@ -96,7 +96,7 @@ const handleNoteSave = () => {
     renderActiveNote();
   });
 
-  noteCounter++;
+  //noteCounter++;
 };
 
 // Delete the clicked note
@@ -148,7 +148,7 @@ const renderNoteList = async (notes) => {
 
   
   let jsonNotes = await notes.json();
-  noteCounter = jsonNotes.length;
+  //noteCounter = jsonNotes.length;
   console.log(typeof jsonNotes);
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
