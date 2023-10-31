@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "title": "Eat Breakfast",
+    "text": "EAT!!!",
+    "id": "note-1"
+  },
+  {
+    "title": "Eat Lunch",
+    "text": "Eat!!",
+    "id": "note-2"
+  },
+  {
+    "title": "Eat Dinner",
+    "text": "Eat!!",
+    "id": "note-3"
+  },
+  {
+    "title": "fff",
+    "text": "fff",
+    "id": "note-4"
+  }
+]
