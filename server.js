@@ -6,7 +6,6 @@ const PORT = 3001;
 
 const app = express();
 
-// Parsing the Incoming body object (req.body)
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
@@ -29,9 +28,6 @@ app.get("/api/notes", (req, res) => {
 
 app.post('/api/notes', (req, res) => {
 
-    console.log(req.body);
-    console.log(typeof req.body);
-
     let postedData = req.body;
     let currentDataArray = null;
 
@@ -51,18 +47,10 @@ app.post('/api/notes', (req, res) => {
             
             currentDataArray = JSON.parse(data);
         }
-        
-        console.log(currentDataArray);
+
         postedData.id = "note-" + (currentDataArray.length + 1);
 
         currentDataArray.push(postedData);
-        
-        console.log(currentDataArray);
-
-        // We MODIFTY (UPDATE) our original data(set)
-
-
-        // WE need to SAVE the NEW DATASET 
 
         writeToFile(currentDataArray);
     });
@@ -74,23 +62,13 @@ app.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id',(req, res) => {
 
-    console.log("deletion call");
-
     res.send("Response sent!!");
 
     fs.readFile('./db/notes.json', 'utf8', function(error, data){
 
-        console.log("read call");
-
         let noteArray = JSON.parse(data);
 
-        console.log(noteArray);
-
         truncatedNoteArray = noteArray.filter(note => note.id !== req.params.id);
-
-        console.log(req.params.id);
-
-        console.log(truncatedNoteArray);
 
         for(let counter = 0; counter < truncatedNoteArray.length; counter++){
 

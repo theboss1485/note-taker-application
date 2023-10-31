@@ -1,82 +1,103 @@
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
+/* I increased the font size of the saved note titles by a little bit,
+because 1em just seemed too small to me. */
+span {
+
+    font-size: 1.15em;
+} 
+
 .save-note, .new-note, .clear-btn {
-  display: none;
+
+    display: none;
 }
 
 .icons {
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
+
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .note-textarea,
 .note-title {
-  color: #000000;
-  width: 100%;
-  outline: none;
-  border: none;
+
+    color: #000000;
+    width: 100%;
+    outline: none;
+    border: none;
 }
 
 .note-textarea {
-  resize: none;
-  height: calc(100% - 63px);
-  padding-top: 15px;
+
+    font-size: 1.15em;
+    resize: none;
+    height: calc(100% - 63px);
+    padding-top: 15px;
 }
 
 /*I increased the height of the note title because some of the character 'g' was getting cut off 
 by the previous 50px height.  It looked like the same thing was happening with the character 'q'.*/
 .note-title {
-  height: 70px;
-  margin-top: 13px;
-  font-size: 3rem;
+
+    height: 63px;
+    margin-top: 13px;
+    font-size: 3rem;
 }
 
 .note-title:read-only,
 .note-textarea:read-only {
-  color: #757575;
+
+    color: #757575;
 }
 
 .list-container .card {
-  height: calc(100vh - 70px);
-  border-bottom: none;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+    height: calc(100vh - 70px);
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .list-container {
-  padding-left: 0;
+
+    padding-left: 0;
 }
 
 .list-container .list-group,
 .list-container .list-group-item:first-child,
 .list-container .card {
-  border-top: none;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
+
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .list-item-title {
-  display: inline-block;
-  width: 75%;
+
+    display: inline-block;
+    width: 75%;
 }
 
 .list-container i {
-  font-size: 1.1rem;
-  cursor: pointer;
+
+    font-size: 1.1rem;
+    cursor: pointer;
 }
 
 /*I also increased the padding around the notes because I wanted each note to be the same height as
 the note title, as it was before I increased the height of the note title.*/
 .list-container .list-group-item {
-  border-left: none;
-  border-right: none;
-  padding: 30px;
-  cursor: pointer;
+
+    border-left: none;
+    border-right: none;
+    padding: 26.5px;
+    cursor: pointer;
 }
