@@ -32,43 +32,39 @@ const hide = (elem) => {
 let activeNote = {};
 
 /* getNotes() uses a GET fetch call to grab the notes from the notes.json file. */
-const getNotes = () =>
-
-    fetch('/api/notes', {
+const getNotes = () => fetch('/api/notes', {
 
         method: 'GET',
         headers: {
 
             'Content-Type': 'application/json'
         }
-    });
+});
 
 /* saveNote() uses a POST fetch call to send a new note to the server, which then writes
 it to the notes.json file. */
-const saveNote = (note) =>
+const saveNote = (note) => fetch('/api/notes', {
 
-    fetch('/api/notes', {
+    method: 'POST',
+    headers: {
 
-        method: 'POST',
-        headers: {
+        'Content-Type': 'application/json'
+    },
 
-            'Content-Type': 'application/json'
-        },
-
-        body: JSON.stringify(note)
-    });
+    body: JSON.stringify(note)
+});
 
 /* deleteNote() uses a DELETE fetch call to  tell the server to delete a specific note.*/
 const deleteNote = (id) =>
 
-    fetch(`/api/notes/${id}`, {
+fetch(`/api/notes/${id}`, {
 
-        method: 'DELETE',
-        headers: {
+    method: 'DELETE',
+    headers: {
 
-            'Content-Type': 'application/json'
-        }
-    });
+        'Content-Type': 'application/json'
+    }
+});
 
 /*This function is called when a note is clicked on, and it displays the note's
 text and title on the left side of the screen.*/
@@ -110,8 +106,6 @@ const handleNoteSave = () => {
         getAndRenderNotes();
         renderActiveNote();
     });
-
-  
 };
 
 // This function deals with deleting a clicked note.
@@ -133,13 +127,13 @@ const handleNoteDelete = (e) => {
         getAndRenderNotes();
         renderActiveNote();
     });
-
 };
 
 // This function sets the active note and displays it.
 const handleNoteView = (e) => {
 
     e.preventDefault();
+
     if(e.target.tagName === 'SPAN'){
 
         activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
@@ -189,8 +183,6 @@ const renderNoteList = async (notes) => {
         noteList.forEach((el) => (el.innerHTML = ''));
     }
 
-  
-
     let noteListItems = [];
 
     // This function returns an HTML element with or without a delete button.
@@ -207,6 +199,7 @@ const renderNoteList = async (notes) => {
         liEl.append(spanEl);
 
         if (delBtn) {
+
             const delBtnEl = document.createElement('i');
             
             delBtnEl.classList.add(
@@ -225,7 +218,7 @@ const renderNoteList = async (notes) => {
         return liEl;
     };
 
-  if (jsonNotes.length === 0) {
+    if (jsonNotes.length === 0) {
 
         noteListItems.push(createLi('No saved Notes', false));
     }
@@ -238,9 +231,10 @@ const renderNoteList = async (notes) => {
         noteListItems.push(li);
     });
 
-  if (window.location.pathname === '/notes') {
-    noteListItems.forEach((note) => noteList[0].append(note));
-  }
+    if (window.location.pathname === '/notes') {
+
+        noteListItems.forEach((note) => noteList[0].append(note));
+    }
 };
 
 const preventFormSubmission = (event) => {

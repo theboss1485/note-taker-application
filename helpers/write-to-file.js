@@ -3,7 +3,7 @@ const fs = require('fs');
 
 function writeToFile(noteArray){
 
-    fs.writeFile('./db/notes.json', JSON.stringify(noteArray, null, 2), function(error){
+    fs.writeFile('./db/notes.json', JSON.stringify(noteArray, null, 4), function(error){
        
         if(error){
 
