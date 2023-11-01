@@ -14,7 +14,7 @@ N/A
 
 ## Usage
 
-Here is a screenshot of what the Note Taker Application looks like: ![A screenshot of the Note Taker Application](./public/assets/images/note-taker-application-screenshot.JPG)
+Here is a screenshot of what the Note Taker Application looks like.  I did zoom in on the application some to make the text more clear: ![A screenshot of the Note Taker Application](./public/assets/images/note-taker-application-screenshot.JPG)
 
 To use this application, please navigate to the following link: [https://afternoon-everglades-83941-0b6721489bd6.herokuapp.com/](https://afternoon-everglades-83941-0b6721489bd6.herokuapp.com/).  Next, click the blue **Get Started** button in the center of the screen.  This will take you to the note taker application.  Any previously saved notes will appear at the left side of the screen.  If you wish to see the saved text in a note, rather than just the title, click on the note.  To enter a new note, enter a tile and text on the right side of the screen.  If you have already clicked on an existing note, click **New Note** in the upper-right corner of the screen, and then you will be able to enter a new note.  Once you have entered the note's title and text, you can save the note by clicking **Save Note** in the upper-right portion of the screen.  If, while entering a note, you wish to clear out the text you have entered, you can click the **Clear Form** button in the upper-right corner of the screen.  Once you have clicked the **Save Note** button, the note you entered will appear in the list of notes on the right side of the screen.
 
