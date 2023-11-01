@@ -140,7 +140,7 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
 
     e.preventDefault();
-    if(e.target.tagName === 'span'){
+    if(e.target.tagName === 'SPAN'){
 
         activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
     
