@@ -17,17 +17,17 @@ app.use(express.static('public'));
 
 app.use('/api', api);
 
+//Here is the GET route for '/notes', which displays the notes page.
 app.get("/notes", (req, res) => {
 
     res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
+// The wildcard route displays the regular index.html page.
 app.get('*', (req, res) => {
 
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
-//Here is the GET route for '/notes', which displays the notes page.
 
 
 // This function makes the application listen on the specified port for various requests.

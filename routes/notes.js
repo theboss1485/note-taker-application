@@ -50,7 +50,12 @@ notes.post('/', (req, res) => {
         writeToFile(currentDataArray);
     });
 
-    res.json({ msg: "Note Saved"});
+    /* I am aware that the module 11 challenge instructions said the the POST request needed to return 
+    the note to the client.  As such, the server sends the note back to the client-side below.  However, because the 
+    client-side already had methods implemented via the starter code that would display the notes to the user, and the challenge
+    instrinctions said that the application's front-end has already been created, I decided not to touch these methods.  
+    Therefore, the client-side doesn't actually do anything with this response.   */
+    res.json({postedData});
 });
 
 // This DELETE route deletes the note that the user chooses from the notes.json file.
