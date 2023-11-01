@@ -22,7 +22,9 @@ If you wish to delete a saved note, click the trash can icon located to the righ
 
 ## Credits
 
-A certain amount of the code and syntax for a server-side portion of an application is boilerplate.  To get the boilerplate code working properly, I used the boilerplate code from the activities for module 11.
+A certain amount of the code and syntax for a server-side portion of an application is boilerplate.  To get the boilerplate code working properly, I used boilerplate code from the activities for module 11.  I used this code in server.js and /routes/notes.js.  Additionally, the routes in server.js look very similar to the code in server.js of activity 21 of module 11.  I used code from that activity to make my code work.
+
+Additionally, I used code from activity 21 of module 11 to allow me to modularize the routes for this app.  I used this code in /routes/index.js. and routes/notes.js
 
 ## License
 
