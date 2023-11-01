@@ -136,7 +136,7 @@ const handleNoteDelete = (e) => {
 
 };
 
-// This function sets the activeNote and displays it.
+// This function sets the active note and displays it.
 const handleNoteView = (e) => {
 
     e.preventDefault();
@@ -152,7 +152,7 @@ const handleNoteView = (e) => {
     renderActiveNote();
 };
 
-// This function sets the activeNote to an empty object and allows the user to enter a new note.
+// This function sets the activeNote variable to an empty object and allows the user to enter a new note.
 const handleNewNoteView = (e) => {
 
     activeNote = {};
