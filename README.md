@@ -26,6 +26,8 @@ A certain amount of the code and syntax for a server-side portion of an applicat
 
 Additionally, I used code from activity 21 of module 11 to allow me to modularize the routes for this app.  I used this code in /routes/index.js. and routes/notes.js
 
+I used the NPM UUID package to generate UUIDs for the notes.  I took the code to use it from this page [https://dev.to/gulshanaggarwal/npm-packages-to-generate-unique-ids-for-your-next-project-1p3b](https://dev.to/gulshanaggarwal/npm-packages-to-generate-unique-ids-for-your-next-project-1p3b).  This page was written by Gulshan Aggarwal.  Here is a link to his profile page on dev.to: [https://dev.to/gulshanaggarwal](https://dev.to/gulshanaggarwal).
+
 ## License
 
 This project is under an MIT license.  Please see the license in the GitHub repository for more information.
